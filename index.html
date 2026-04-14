@@ -2,26 +2,225 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>GTA SA PaintJobs Shop</title>
+<title>PaintJobs Shop</title>
 
 <style>
 body {
     margin: 0;
-    background: #0d0d0d;
-    color: white;
     font-family: Arial;
+    color: white;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
 }
-h1 {
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #ff3c00, #ff9900);
+    padding: 30px;
     text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+/* SEKCJE */
+.section {
     padding: 40px;
-    color: #ff3c00;
+}
+
+.section h2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #111;
+    border-left: 4px solid #ff3c00;
+    border-radius: 8px;
+}
+
+/* GALERIA */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ITEM (karty) */
+.item {
+    background: #141414;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 250px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255, 60, 0, 0.1);
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 60, 0, 0.25);
+}
+
+.item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* OPIS W PROSTOKĄCIE */
+.caption {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    background: #0f0f0f;
+    border-top: 1px solid #222;
+}
+
+/* MODELE AUT (klikane) */
+.models {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.model {
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: #2a2a2a;
+    color: gray;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+    user-select: none;
+}
+
+.model:hover {
+    background: #444;
+}
+
+/* aktywny model = czarny */
+.model.active {
+    background: #000;
+    color: white;
+    border: 1px solid #ff3c00;
+}
+
+/* STOPKA */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #888;
+    margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🔥 GTA SA PaintJobs Shop działa!</h1>
+<header>
+    <h1>🔥 GTA SA PaintJobs Shop</h1>
+    <p>Najlepsze paintjoby do Twoich fur 🔥</p>
+</header>
+
+<!-- MODELE (klikane) -->
+<div class="section">
+    <div class="models">
+        <div class="model active">Sultan</div>
+        <div class="model">Elegy</div>
+        <div class="model">Burrito</div>
+        <div class="model">Flash</div>
+        <div class="model">Turismo</div>
+        <div class="model">Buffalo</div>
+        <div class="model">Alpha</div>
+    </div>
+</div>
+
+<!-- SULTAN -->
+<div class="section">
+    <h2>🚗 Sultan</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Sultan</div>
+        </div>
+    </div>
+</div>
+
+<!-- ELEGY -->
+<div class="section">
+    <h2>🚗 Elegy</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Elegy</div>
+        </div>
+    </div>
+</div>
+
+<!-- BURRITO -->
+<div class="section">
+    <h2>🚐 Burrito</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Burrito</div>
+        </div>
+    </div>
+</div>
+
+<!-- FLASH -->
+<div class="section">
+    <h2>🚗 Flash</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Flash</div>
+        </div>
+    </div>
+</div>
+
+<!-- TURISMO -->
+<div class="section">
+    <h2>🏎 Turismo</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Turismo</div>
+        </div>
+    </div>
+</div>
+
+<!-- BUFFALO -->
+<div class="section">
+    <h2>🚗 Buffalo</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Buffalo</div>
+        </div>
+    </div>
+</div>
+
+<!-- ALPHA -->
+<div class="section">
+    <h2>🚗 Alpha</h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="LINK_DO_ZDJECIA" alt="">
+            <div class="caption">Opis paintjoba Alpha</div>
+        </div>
+    </div>
+</div>
+
+<!-- WKRÓTCE -->
+<div class="section">
+    <h2>⏳ Więcej wkrótce...</h2>
+    <p>Nowe auta i paintjoby już niedługo 🔥</p>
+</div>
+
+<footer>
+    <p>© 2026 GTA SA PaintJobs Shop</p>
+</footer>
 
 </body>
 </html>
