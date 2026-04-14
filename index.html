@@ -2,33 +2,31 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>PaintJobs Shop</title>
+<title>GTA SA PaintJobs Shop PRO</title>
 
 <style>
 html {
     scroll-behavior: smooth;
 }
 
-/* ===== BODY ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: white;
-    background: linear-gradient(135deg, #0011ff, #6a00ff, #ff2bd6);
-    background-attachment: fixed;
+    background: radial-gradient(circle at top, #0b0f2a, #12002b, #2a003f);
 }
 
 /* HEADER */
 header {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(90deg, #0011ff, #6a00ff, #ff2bd6);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #6a00ff, #ff2bd6, #0011ff);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 h1 {
     margin: 0;
-    font-size: 42px;
+    font-size: 44px;
 }
 
 /* MENU */
@@ -37,60 +35,79 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    padding: 15px;
+    padding: 12px;
     position: sticky;
     top: 0;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
     z-index: 999;
 }
 
 .model {
     padding: 10px 14px;
-    border-radius: 8px;
-    background: #222;
-    color: gray;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    color: #aaa;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.25s;
     position: relative;
     overflow: hidden;
 }
 
 .model:hover {
-    background: #444;
     color: white;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    background: rgba(255,255,255,0.15);
+}
+
+.model.active {
+    background: #000;
+    color: #fff;
+    border: 1px solid #ff2bd6;
 }
 
 /* SEKCJE */
 .section {
-    padding: 80px 40px;
-    min-height: 60vh;
+    padding: 90px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
 
+/* KARTY (PAINTJOBS) */
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 15px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* HEADER SECTION */
 .section h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: rgba(0,0,0,0.45);
-    border-radius: 10px;
-    border-left: 4px solid #ff2bd6;
-}
-
-/* CONTENT */
-.content-box {
-    margin-top: 20px;
-    padding: 20px;
+    padding: 12px 18px;
     background: rgba(0,0,0,0.4);
+    border-left: 4px solid #ff2bd6;
     border-radius: 10px;
 }
 
-/* ❤️ ULUBIONE */
+/* ULUBIONE */
 .fav {
     cursor: pointer;
     font-size: 22px;
     transition: 0.2s;
+    user-select: none;
 }
 
 .fav.active {
@@ -101,18 +118,16 @@ h1 {
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #111;
+    padding: 25px;
+    background: rgba(0,0,0,0.5);
     color: #aaa;
+    margin-top: 50px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
     h1 { font-size: 28px; }
-    .models {
-        flex-direction: column;
-        align-items: center;
-    }
+    .section { padding: 50px 10px; }
 }
 </style>
 </head>
@@ -120,8 +135,8 @@ footer {
 <body>
 
 <header>
-    <h1>🔥 GTA SA PaintJobs Shop PRO</h1>
-    <p>Najlepsze paintjoby 🔥</p>
+    <h1> czego tu szukasz co 💀 </h1>
+    <p>Najlepsze paintjoby do GTA SA</p>
 </header>
 
 <!-- MENU -->
@@ -136,54 +151,53 @@ footer {
     <a class="model" href="#alpha">Alpha</a>
 </div>
 
-<!-- SEKCJE -->
+<!-- START -->
 <div class="section" id="start">
     <h2>🏠 Start <span class="fav">❤</span></h2>
-    <div class="content-box">Tutaj dodasz swój tekst</div>
+    <div class="card">Dodaj tutaj opis / zdjęcia / showcase</div>
 </div>
 
 <div class="section" id="sultan">
     <h2>🚗 Sultan <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Sultan</div>
+    <div class="card">Paintjoby Sultan</div>
 </div>
 
 <div class="section" id="elegy">
     <h2>🚗 Elegy <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Elegy</div>
+    <div class="card">Paintjoby Elegy</div>
 </div>
 
 <div class="section" id="burrito">
     <h2>🚐 Burrito <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Burrito</div>
+    <div class="card">Paintjoby Burrito</div>
 </div>
 
 <div class="section" id="flash">
     <h2>🚗 Flash <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Flash</div>
+    <div class="card">Paintjoby Flash</div>
 </div>
 
 <div class="section" id="turismo">
     <h2>🏎 Turismo <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Turismo</div>
+    <div class="card">Paintjoby Turismo</div>
 </div>
 
 <div class="section" id="buffalo">
     <h2>🚗 Buffalo <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Buffalo</div>
+    <div class="card">Paintjoby Buffalo</div>
 </div>
 
 <div class="section" id="alpha">
     <h2>🚗 Alpha <span class="fav">❤</span></h2>
-    <div class="content-box">Paintjoby Alpha</div>
+    <div class="card">Paintjoby Alpha</div>
 </div>
 
 <footer>
     <p>© 2026 GTA SA PaintJobs Shop PRO</p>
 </footer>
 
-<!-- JS -->
 <script>
-/* ULUBIONE */
+/* ❤️ ULUBIONE */
 document.querySelectorAll(".fav").forEach(fav => {
     const id = fav.closest(".section").id;
 
@@ -202,8 +216,10 @@ document.querySelectorAll(".fav").forEach(fav => {
     });
 });
 
-/* SMOOTH SCROLL MENU */
-document.querySelectorAll('.model').forEach(link => {
+/* 🔥 AKTYWNE MENU + SMOOTH SCROLL */
+const links = document.querySelectorAll('.model');
+
+links.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
 
@@ -214,6 +230,19 @@ document.querySelectorAll('.model').forEach(link => {
                 behavior: 'smooth',
                 block: 'start'
             });
+        }
+    });
+});
+
+/* 🧠 ACTIVE MENU ON SCROLL */
+window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY + 200;
+
+    document.querySelectorAll(".section").forEach(sec => {
+        if(scrollPos >= sec.offsetTop){
+            links.forEach(l => l.classList.remove("active"));
+            let active = document.querySelector(`a[href="#${sec.id}"]`);
+            if(active) active.classList.add("active");
         }
     });
 });
