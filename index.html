@@ -2,16 +2,17 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>PaintJobs Shop </title>
+<title>PaintJobs Shop</title>
 
 <style>
 html {
     scroll-behavior: smooth;
 }
 
+/* ===== BODY ===== */
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     color: white;
     background: linear-gradient(135deg, #0011ff, #6a00ff, #ff2bd6);
     background-attachment: fixed;
@@ -19,23 +20,24 @@ body {
 
 /* HEADER */
 header {
-    background: linear-gradient(90deg, #0011ff, #6a00ff, #ff2bd6);
-    padding: 30px;
     text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #0011ff, #6a00ff, #ff2bd6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 h1 {
     margin: 0;
-    font-size: 40px;
+    font-size: 42px;
 }
 
 /* MENU */
 .models {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
-    padding: 15px;
     justify-content: center;
+    gap: 10px;
+    padding: 15px;
     position: sticky;
     top: 0;
     background: rgba(0,0,0,0.55);
@@ -50,8 +52,8 @@ h1 {
     color: gray;
     text-decoration: none;
     transition: 0.2s;
-    font-size: 14px;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .model:hover {
@@ -60,27 +62,10 @@ h1 {
     transform: scale(1.05);
 }
 
-.model.active {
-    background: #000;
-    color: white;
-    border: 1px solid #ff2bd6;
-}
-
-/* SEKCJE + ANIMACJA */
+/* SEKCJE */
 .section {
     padding: 80px 40px;
     min-height: 60vh;
-
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeIn 0.8s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .section h2 {
@@ -91,11 +76,6 @@ h1 {
     background: rgba(0,0,0,0.45);
     border-radius: 10px;
     border-left: 4px solid #ff2bd6;
-    transition: 0.3s;
-}
-
-.section h2:hover {
-    transform: translateX(5px);
 }
 
 /* CONTENT */
@@ -111,7 +91,6 @@ h1 {
     cursor: pointer;
     font-size: 22px;
     transition: 0.2s;
-    user-select: none;
 }
 
 .fav.active {
@@ -119,28 +98,7 @@ h1 {
     transform: scale(1.3);
 }
 
-/* BUTTON ANIMACJA (menu) */
-.model {
-    position: relative;
-    overflow: hidden;
-}
-
-.model::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background: rgba(255,255,255,0.1);
-    transition: 0.3s;
-}
-
-.model:hover::after {
-    left: 0;
-}
-
-/* STOPKA */
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -148,19 +106,12 @@ footer {
     color: #aaa;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-
+    h1 { font-size: 28px; }
     .models {
         flex-direction: column;
         align-items: center;
-    }
-
-    .section {
-        padding: 40px 20px;
     }
 }
 </style>
@@ -185,12 +136,10 @@ footer {
     <a class="model" href="#alpha">Alpha</a>
 </div>
 
-<!-- START -->
+<!-- SEKCJE -->
 <div class="section" id="start">
     <h2>🏠 Start <span class="fav">❤</span></h2>
-    <div class="content-box">
-        Tutaj dodasz swój tekst + zdjęcia PNG
-    </div>
+    <div class="content-box">Tutaj dodasz swój tekst</div>
 </div>
 
 <div class="section" id="sultan">
@@ -232,8 +181,9 @@ footer {
     <p>© 2026 GTA SA PaintJobs Shop PRO</p>
 </footer>
 
-<!-- JS: ULUBIONE -->
+<!-- JS -->
 <script>
+/* ULUBIONE */
 document.querySelectorAll(".fav").forEach(fav => {
     const id = fav.closest(".section").id;
 
@@ -248,6 +198,22 @@ document.querySelectorAll(".fav").forEach(fav => {
             localStorage.setItem(id, "true");
         } else {
             localStorage.removeItem(id);
+        }
+    });
+});
+
+/* SMOOTH SCROLL MENU */
+document.querySelectorAll('.model').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if(target){
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
 });
